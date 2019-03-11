@@ -1,4 +1,4 @@
-FROM streamsets/datacollector:${SDC_VERSION}
+FROM streamsets/datacollector
 ARG SDC_LIBS
 
 # Copy passwords file
