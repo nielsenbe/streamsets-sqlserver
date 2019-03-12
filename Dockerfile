@@ -6,7 +6,7 @@ COPY form-realm.properties etc/sdc/form-realm.properties
 #RUN "chmod go-rwx /etc/sdc/form-realm.properties"
 
 # Copy SQL Server jar
-RUN mkdir /opt/extfiles/sqlserverjdbc
+RUN mkdir -p /opt/extfiles/sqlserverjdbc
 COPY mssql-jdbc-7.2.1.jre8.jar /opt/extfiles
 
 
