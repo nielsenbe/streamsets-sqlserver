@@ -18,4 +18,4 @@ COPY mssql-jdbc-7.2.1.jre8.jar /opt/sdc-extras/streamsets-datacollector-jdbc-lib
 # Install JDBC driver
 ENV STREAMSETS_LIBRARIES_EXTRA_DIR "/opt/sdc-extras/"
 
-RUN "${SDC_DIST}/bin/streamsets" stagelibs -install=streamsets-datacollector-jdbc-lib streamsets-datacollector-snowflake-lib
+RUN "${SDC_DIST}/bin/streamsets" stagelibs -install=streamsets-datacollector-jdbc-lib,streamsets-datacollector-snowflake-lib
