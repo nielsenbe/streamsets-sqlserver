@@ -14,8 +14,10 @@ RUN sudo chown sdc /etc/sdc/sdc-security.policy
 # Copy SQL Server jar
 RUN sudo mkdir -p /opt/sdc-extras/streamsets-datacollector-jdbc-lib/lib/
 COPY mssql-jdbc-7.2.1.jre8.jar /opt/sdc-extras/streamsets-datacollector-jdbc-lib/lib/mssql-jdbc-7.2.1.jre8.jar
-
-# Install JDBC driver
 ENV STREAMSETS_LIBRARIES_EXTRA_DIR "/opt/sdc-extras/"
 
-RUN "${SDC_DIST}/bin/streamsets" stagelibs -install=streamsets-datacollector-jdbc-lib,streamsets-datacollector-snowflake-lib
+# Copy Snowflake library
+COPY streamsets-datacollector-snowflake-lib /opt/streamsets-datacollector-user-libs/streamsets-datacollector-snowflake-lib
+
+
+RUN "${SDC_DIST}/bin/streamsets" stagelibs -install=streamsets-datacollector-jdbc-lib
