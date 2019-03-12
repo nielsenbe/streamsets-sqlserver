@@ -2,8 +2,10 @@ FROM streamsets/datacollector
 ARG SDC_LIBS
 
 # Copy passwords file
+RUN sudo ls -l /etc/sdc
 COPY form-realm.properties etc/sdc/form-realm.properties
-RUN sudo chmod user go-rwx /etc/sdc/form-realm.properties
+RUN sudo chmod go-rwx /etc/sdc/form-realm.properties
+RUN sudo ls -l /etc/sdc
 
 # Copy SQL Server jar
 RUN sudo mkdir -p /extfiles
