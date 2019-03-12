@@ -3,7 +3,7 @@ ARG SDC_LIBS
 
 # Copy passwords file
 COPY form-realm.properties etc/sdc/form-realm.properties
-RUN chmod go-rwx /etc/sdc/form-realm.properties
+RUN sudo chmod user go-rwx /etc/sdc/form-realm.properties
 
 # Copy SQL Server jar
 RUN sudo mkdir -p /extfiles
