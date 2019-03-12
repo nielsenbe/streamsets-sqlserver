@@ -8,7 +8,7 @@ RUN sudo chown sdc /etc/sdc/form-realm.properties
 #RUN sudo ls -l /etc/sdc
 
 # Copy security file
-COPY form-realm.properties etc/sdc/sdc-security.policy
+COPY sdc-security.policy etc/sdc/sdc-security.policy
 RUN sudo chown sdc /etc/sdc/sdc-security.policy
 
 # Copy SQL Server jar
