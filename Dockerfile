@@ -5,6 +5,7 @@ ARG SDC_LIBS
 RUN sudo ls -l /etc/sdc
 COPY form-realm.properties etc/sdc/form-realm.properties
 RUN sudo chmod go-rwx /etc/sdc/form-realm.properties
+RUN sudo chown sdc /etc/sdc/form-realm.properties
 RUN sudo ls -l /etc/sdc
 
 # Copy SQL Server jar
