@@ -62,3 +62,8 @@ grant codebase "file://${sdc.dist.dir}/libs-common-lib/-" {
 grant codebase "file:///opt/sdc-extras/-" {
   permission java.security.AllPermission;
 };
+
+// user-defined external directory
+grant codebase "file:///opt/streamsets-datacollector-user-libs/-" {
+  permission java.security.AllPermission;
+};
