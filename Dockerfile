@@ -20,4 +20,5 @@ ENV STREAMSETS_LIBRARIES_EXTRA_DIR "/opt/sdc-extras/"
 COPY streamsets-datacollector-snowflake-lib-1.0.1.tgz /opt/streamsets-datacollector-user-libs/streamsets-datacollector-snowflake-lib-1.0.1/streamsets-datacollector-snowflake-lib-1.0.1.tgz
 RUN sudo tar -xvzf /opt/streamsets-datacollector-user-libs/streamsets-datacollector-snowflake-lib-1.0.1/streamsets-datacollector-snowflake-lib-1.0.1.tgz
 
+
 RUN "${SDC_DIST}/bin/streamsets" stagelibs -install=streamsets-datacollector-jdbc-lib
