@@ -22,4 +22,4 @@ RUN sudo tar -xvzf /opt/streamsets-datacollector-user-libs/streamsets-datacollec
 RUN cp -r streamsets-libs/streamsets-datacollector-snowflake-lib /opt/streamsets-datacollector-user-libs/
 
 
-RUN "${SDC_DIST}/bin/streamsets" stagelibs -install=streamsets-datacollector-jdbc-lib
+RUN "${SDC_DIST}/bin/streamsets" stagelibs -install=streamsets-datacollector-jdbc-lib,streamsets-datacollector-hdp_2_6-lib
