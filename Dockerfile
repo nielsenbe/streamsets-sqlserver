@@ -22,6 +22,8 @@ RUN sudo tar -xvzf /opt/streamsets-datacollector-user-libs/streamsets-datacollec
 RUN cp -r streamsets-libs/streamsets-datacollector-snowflake-lib /opt/streamsets-datacollector-user-libs/
 
 # Create File Share
+ENV ASACCOUNT
+ENV ASPWD
 RUN sudo mount -t cifs //$ASACCOUNT.file.core.windows.net/bnielsenadl2fs /mnt/sdcfs -o vers=3.0,username=$ASACCOUNT,password=$ASPWD,dir_mode=0777,file_mode=0777,serverino
 RUN sudo tar xvzf /mnt/sdcfs/streamsets-datacollector-core-3.8.0.tgz -C /home/sdc
 
