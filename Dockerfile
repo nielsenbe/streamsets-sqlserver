@@ -26,8 +26,8 @@ ARG ASACCOUNT
 ARG ASPWD
 ENV EASACCOUNT=$ASACCOUNT
 ENV EASPWD=$ASPWD
-RUN sudo mount -t cifs //$EASACCOUNT.file.core.windows.net/bnielsenadl2fs /mnt/sdcfs -o vers=3.0,username=$EASACCOUNT,password=$EASPWD,dir_mode=0777,file_mode=0777,serverino
-RUN sudo tar xvzf /mnt/sdcfs/streamsets-datacollector-core-3.8.0.tgz -C /home/sdc
+#RUN sudo mount -t cifs //$EASACCOUNT.file.core.windows.net/bnielsenadl2fs /mnt/sdcfs -o vers=3.0,username=$EASACCOUNT,password=$EASPWD,dir_mode=0777,file_mode=0777,serverino
+#RUN sudo tar xvzf /mnt/sdcfs/streamsets-datacollector-core-3.8.0.tgz -C /home/sdc
 
 
 RUN "${SDC_DIST}/bin/streamsets" stagelibs -install=streamsets-datacollector-jdbc-lib,streamsets-datacollector-hdp_2_6-lib,streamsets-datacollector-azure-lib,streamsets-datacollector-azure-keyvault-credentialstore-lib,streamsets-datacollector-wholefile-transformer-lib
